@@ -1,0 +1,37 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: Wynters
+ * @Date: 2021-04-27 14:30:27
+ * @LastEditors: Wynters
+ * @LastEditTime: 2021-04-30 17:05:26
+-->
+{% code
+type Mobile struct {
+     Vars map[string]interface{}
+}
+%}
+{% func (m *Mobile) Body() %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    {% comment %} <title>延初OA系统</title> {% endcomment %}
+    <meta name="description" content="延初OA系统">
+    <meta name="author" content="浙江延初集团有限公司">
+    <link rel="shortcut icon" href="/favicon.ico" /> <!-- Bootstrap Core CSS -->
+    <link href="http://fw.yunxi.top/static/css/bootstrap.min.css" rel="stylesheet">
+    <title>{%v m.Vars["title"] %}</title>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]> <script src="https://cdn.staticfile.org/html5shiv/3.7.3/html5shiv.min.js"></script> <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+</head>
+<body>
+    <div style="width: 80%;margin: 0 auto;margin-top: 100px;" align="center">
+        <div><img src="/static/img/img.png" style="width: 50%;" /></div>
+        <h3 style="margin-top:10px">请使用PC端打开本系统</h3>
+    </div>
+    </body>
+{% endfunc %}

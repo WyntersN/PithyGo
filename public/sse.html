@@ -1,0 +1,9 @@
+<div id="result">
+</div>
+<script type="text/javascript">
+  var source = new EventSource("http://localhost:8803/api/sse?stream=messages");
+source.onmessage = function(event) {
+  document.getElementById("result").innerHTML += event.data + "<br>";
+};
+</script>
+

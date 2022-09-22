@@ -1,0 +1,49 @@
+app:
+  domain: ""
+  port: 8090
+  DefaultLayout: "shared/layoutFront.html"
+  DefaultError: "shared/error.html"
+  SessionCoolieName: "mall_ccjsicnsbdhcbsjcjdbzas"
+  SessionExpires: 720 # session保持时间 /小时
+  #调试开关
+  AppMode: "info" #IRIS框架调试模式 disable < error < warn < info < debug
+  UploadSize: 5               #允许上传文件的大小 单位M
+  UploadSuffixExists: ".jpg,.png,.jpeg,.gif,.bmp" #允许上传文件的后缀
+# db connect configuration
+db:
+  driverName: "mysql"
+  host: "127.0.0.1"
+  port: 3306
+  database: ""
+  user: ""
+  password: ""
+  prefix: ""
+  charset: "utf8mb4"
+  LogMode: 4  #1:Silent < 2:Error < 3:Warn < 4:Info
+  MaxIdleConns: 10 #空闲时最大的连接数
+  MaxOpenConns: 100 #最大的连接数
+
+# redis configuration
+redis:
+  addr: "127.0.0.1:6379"
+  password: ""
+  DB: 0
+  poolSize: 2000
+  minIdleConns: 30
+  
+# websocket configuration
+websocket:
+  port: 8805
+  rpcPort: 9002
+
+# zap logger configuration
+zap:
+  level: 'info'
+  format: 'console'
+  prefix: ''
+  director: 'runtime/logs'
+  link-name: 'latest_log'
+  show-line: true
+  encode-level: 'LowercaseColorLevelEncoder'
+  stacktrace-key: 'stacktrace'
+  log-in-console: true
