@@ -4,7 +4,7 @@
  * @Author: Wynters
  * @Date: 2021-04-25 16:54:18
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-09-22 15:40:30
+ * @LastEditTime: 2022-09-23 14:35:42
  */
 
 package bootstrap
@@ -50,7 +50,7 @@ func Run() {
 	//路由
 	router.InitRouter(app)
 	srv := &http.Server{
-		Addr:         service.CONFIG.App.Domain,
+		Addr:         service.CONFIG.App.Domain + ":" + service.CONFIG.App.Port,
 		ReadTimeout:  300 * time.Second,
 		WriteTimeout: 600 * time.Second,
 	}
