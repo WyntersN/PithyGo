@@ -3,14 +3,13 @@
  * @version:
  * @Author: Wynters
  * @Date: 2021-10-21 21:28:28
- * @LastEditTime: 2022-07-21 14:31:41
+ * @LastEditTime: 2022-09-23 13:59:36
  * @FilePath: \PithyGo\service\redis.go
  */
 package service
 
 import (
 	"github.com/go-redis/redis"
-	"github.com/spf13/viper"
 )
 
 var RedisClient *redis.Client
@@ -18,11 +17,11 @@ var RedisClient *redis.Client
 func NewRedisClient() {
 
 	RedisClient = redis.NewClient(&redis.Options{
-		Addr:         viper.GetString("redis.addr"),
-		Password:     viper.GetString("redis.password"),
-		DB:           viper.GetInt("redis.DB"),
-		PoolSize:     viper.GetInt("redis.poolSize"),
-		MinIdleConns: viper.GetInt("redis.minIdleConns"),
+		Addr:         CONFIG.Redis.Addr,
+		Password:     CONFIG.Redis.Password,
+		DB:           CONFIG.Redis.DB,
+		PoolSize:     CONFIG.Redis.PoolSize,
+		MinIdleConns: CONFIG.Redis.MinIdleConns,
 	})
 
 	pong, err := RedisClient.Ping().Result()
